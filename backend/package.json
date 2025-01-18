@@ -188,7 +188,8 @@
     "nodemon": "^3.1.7"
   },
   "scripts": {
-    "start": "nodemon --exec node index.js"
+    "start": "nodemon --exec node index.js",
+    "test": "mocha"
   },
   "author": "ramylla",
   "license": "ISC"

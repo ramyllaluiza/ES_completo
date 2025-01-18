@@ -1,4 +1,4 @@
-name: Backend CI/CD Pipeline
+name: CI/CD Pipeline for Backend
 
 on:
   push:
@@ -16,26 +16,13 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v2
 
-      - name: Set up Node.js (se o backend usar Node.js)
+      - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '20.18.1'  # Use a versão necessária para seu backend
+          node-version: '20.18.1'
 
-      - name: Navigate to backend directory
-        run: cd backend
-
-      - name: Install backend dependencies
+      - name: Install dependencies
         run: npm install
-        working-directory: ./backend
 
-      - name: Run backend tests
+      - name: Run tests
         run: npm test
-        working-directory: ./backend
-
-      - name: Build backend
-        run: npm run build
-        working-directory: ./backend
-
-      - name: Deploy backend to production (opcional)
-        run: npm run deploy
-        working-directory: ./backend

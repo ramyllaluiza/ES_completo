@@ -1,0 +1,22 @@
+version: '3.3'
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - '8080:8080'
+    environment:
+      # Ajuste as variáveis de ambiente do backend para o novo banco de dados, se necessário.
+      - DB_URI=your_database_connection_string_here
+    volumes:
+      - ./backend/.env:/app/.env  # Mapeia o .env para o container
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - '3000:3000'
+    depends_on:
+      - backend
