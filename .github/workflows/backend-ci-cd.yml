@@ -21,11 +21,12 @@ jobs:
         with:
           node-version: '20.18.1'
 
-      - name: Navigate to backend directory
-        run: cd backend
-
       - name: Install dependencies
-        run: npm install
+        run: |
+          cd backend
+          npm install
 
       - name: Run tests
-        run: npm test
+        run: |
+          cd backend
+          npm test
