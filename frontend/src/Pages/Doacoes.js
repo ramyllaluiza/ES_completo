@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+
 import AddClothingForm from '../components/AddClothingForm'; // Importe o componente do formulário
 import ClothingTable from '../components/ClothingTable';
 
 function Doacoes() {
   const [isFormVisible, setIsFormVisible] = useState(false);
   const [clothes, setClothes] = useState([]); // Estado para armazenar as roupas
+  const axios = require('axios');
 
   // Carregar todas as doações ao inicializar o componente
   useEffect(() => {

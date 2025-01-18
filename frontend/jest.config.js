@@ -1,11 +1,18 @@
 module.exports = {
-  testEnvironment: "jsdom", // Usa o ambiente jsdom para testes de interação com o DOM
+  testEnvironment: "jsdom",
   transform: {
-    "^.+\\.(js|jsx|ts|tsx)$": "babel-jest", // Transforma arquivos JS/JSX/TS/TSX usando babel-jest
-    "^.+\\.css$": "jest-transform-stub"     // Mocka arquivos CSS para evitar erro de importação
+    "^.+\\.(js|jsx|ts|tsx)$": "babel-jest",
+    "^.+\\.css$": "jest-transform-stub",
   },
   moduleNameMapper: {
-    "\\.css$": "identity-obj-proxy"  // Mapeia arquivos CSS para um mock vazio
+    "\\.css$": "identity-obj-proxy",
   },
-  setupFiles: ['<rootDir>/jest.setup.js'], // Configura o arquivo de setup
+  transformIgnorePatterns: [
+    "/node_modules/(?!axios)/", // Permite que o axios seja transformado
+  ],
+  globals: {
+    "babel-jest": {
+      useESModules: true,
+    },
+  },
 };
