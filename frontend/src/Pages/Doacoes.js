@@ -2,11 +2,11 @@ import React, { useState, useEffect } from 'react';
 
 import AddClothingForm from '../components/AddClothingForm'; // Importe o componente do formulário
 import ClothingTable from '../components/ClothingTable';
+import axios from 'axios';
 
 function Doacoes() {
   const [isFormVisible, setIsFormVisible] = useState(false);
   const [clothes, setClothes] = useState([]); // Estado para armazenar as roupas
-  const axios = require('axios');
 
   // Carregar todas as doações ao inicializar o componente
   useEffect(() => {
@@ -24,18 +24,28 @@ function Doacoes() {
   };
 
   const addClothing = (clothing) => {
-    // Envia a nova doação para a API
-    axios.post('http://localhost:8080/doacoes', clothing) // Alterei a porta para 8080
-      .then((response) => {
-        setClothes((prevClothes) => [...prevClothes, { ...clothing, id: response.data.id }]); // Atualiza o estado com a nova doação
-        alert('Doação adicionada com sucesso!');
-      })
-      .catch((error) => {
-        console.error('Erro ao adicionar a doação:', error);
-        alert('Erro ao adicionar a doação.');
-      });
+    console.log("Dados enviados ao adicionar doação:", clothing);
+  
+    if (!clothing.nome || !clothing.quantidade || !clothing.tamanho) {
+      alert("Por favor, preencha todos os campos antes de enviar.");
+      return;
+    }
+  
+    axios.post('http://localhost:8080/doacoes', clothing)
+    .then((response) => {
+      console.log("Resposta da API ao adicionar doação:", response.data);
+      setClothes((prevClothes) => [
+        ...prevClothes,
+        { ...clothing, id: response.data.id }, // Usa o ID retornado
+      ]);
+      alert('Doação adicionada com sucesso!');
+    })
+    .catch((err) => {
+      console.error('Erro ao adicionar a doação:', err);
+      alert('Erro ao adicionar a doação.');
+    });  
   };
-
+  
   const removeClothing = (id) => {
     if (!id) {
       console.error("ID não fornecido para remoção!");

@@ -10,22 +10,27 @@ function ClothingTable({ clothes, onRemoveClothing }) {
         </tr>
       </thead>
       <tbody>
-        {clothes.map((clothing) => (
-          <tr key={clothing.id}>
-            <td>{clothing.nome}</td>
-            <td>{clothing.tamanho}</td>
-            <td>{clothing.quantidade}</td>
-            <td style={{ textAlign: 'center' }}> {/* Centraliza o botão dentro da célula */}
-              <button onClick={() => {
-                console.log("ID da doação para remover:", clothing.id);
-                onRemoveClothing(clothing.id);
-              }}>
-                Remover
-              </button>
-            </td>
-          </tr>
-        ))}
-      </tbody>
+  {clothes.map((clothing, index) => {
+    console.log("Doação renderizada:", clothing);
+    return (
+      <tr key={clothing.id || index}>
+        <td>{clothing.nome}</td>
+        <td>{clothing.tamanho}</td>
+        <td>{clothing.quantidade}</td>
+        <td style={{ textAlign: 'center' }}>
+          <button
+            onClick={() => {
+              console.log("ID da doação para remover:", clothing.id);
+              onRemoveClothing(clothing.id);
+            }}
+          >
+            Remover
+          </button>
+        </td>
+      </tr>
+    );
+  })}
+</tbody>
     </table>
   );
 }

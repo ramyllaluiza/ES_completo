@@ -166,7 +166,12 @@ router.post('/', (req, res) => {
     const idDoacao = uuidv4();
     doacao.id = idDoacao;
     doacoes[idDoacao] = doacao;
-    res.json({ msg: "Doação adicionada com sucesso!" });
+
+    // Incluindo o ID na resposta
+    res.json({ 
+        msg: "Doação adicionada com sucesso!",
+        id: idDoacao // Retorna o ID gerado
+    });
 });
 
 /**
