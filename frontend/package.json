@@ -39,6 +39,7 @@
     "prompts": "^2.4.2",
     "react": "^18.3.1",
     "react-app-polyfill": "^3.0.0",
+    "react-bootstrap": "^2.10.7",
     "react-dev-utils": "^12.0.1",
     "react-dom": "^18.3.1",
     "react-icons": "^5.4.0",
@@ -61,7 +62,7 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js --watchAll=false",
+    "test": "node scripts/test.js --maxWorkers=2 --watchAll=false",
     "deploy": "npm run build && serve -s build"
   },
   "eslintConfig": {
@@ -94,7 +95,7 @@
     "jest": "^28.1.3",
     "jest-environment-jsdom": "^29.7.0",
     "jest-transform-stub": "^2.0.0",
-    "react-router-dom": "^6.28.2"
+    "react-router-dom": "^7.1.3"
   },
   "jest": {
     "testEnvironment": "jsdom",

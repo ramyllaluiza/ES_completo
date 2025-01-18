@@ -82,7 +82,7 @@ function Doacoes() {
 const styles = {
   button: {
     padding: '10px 20px',
-    backgroundColor: '#1C2434',
+    backgroundColor: '#2e6399',
     color: 'white',
     border: 'none',
     cursor: 'pointer',

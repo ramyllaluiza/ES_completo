@@ -28,7 +28,7 @@ function App() {
 const styles = {
   button: {
     padding: '10px 20px',
-    backgroundColor: '#002147',
+    backgroundColor: '#007bdf',
     color: 'white',
     border: 'none',
     cursor: 'pointer',
