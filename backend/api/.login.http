@@ -1,0 +1,28 @@
+curl -X GET http://localhost:8080/
+###
+
+curl -X GET http://localhost:8080/login
+
+### 
+
+curl -X POST http://localhost:8080/login \
+     -H "Content-Type: application/json" \
+     -d '{
+           "email": "luizalber@gmail.com",
+           "senha": "senhaliuzadx"
+         }'
+
+### 
+
+curl -X PUT "http://localhost:8080/login?id=fd5d42ad-3df6-4baa-9ae0-745d6b33e381" \
+     -H "Content-Type: application/json" \
+     -d '{
+           "email": "pedroluiza@gmail.com",
+           "senha": "123456"
+         }'
+
+
+###
+
+curl -X DELETE "http://localhost:8080/login?id=fd5d42ad-3df6-4baa-9ae0-745d6b33e381" \
+     -H "Content-Type: application/json"

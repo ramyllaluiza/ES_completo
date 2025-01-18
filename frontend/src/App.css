@@ -1,0 +1,180 @@
+/* Estilos Gerais */
+html, body {
+  height: 100%; /* Garantir que o HTML e o body ocupem 100% da altura da página */
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  overflow-x: hidden; /* Impede o overflow horizontal */
+}
+
+/* Navbar Lateral */
+.navbar {
+  background-color: #1C2434;
+  color: white;
+  width: 250px;
+  height: 100vh;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 0;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .site-name {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+}
+
+.navbar ul {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.navbar ul li {
+  margin: 1rem 0;
+}
+
+/* Navbar Lateral */
+.navbar ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  display: block;
+  padding: 0.75rem 0;
+  width: 100%;
+  transition: background-color 0.3s, padding-left 0.2s, color 0.3s;
+  padding-left: 1rem;
+}
+
+/* Efeito de Hover */
+.navbar ul li a:hover {
+  background-color: #4a90e2; /* Azul suave para o destaque */
+  color: white; /* Cor do texto ao passar o mouse */
+  transform: translateX(5px); /* Um leve movimento para a direita */
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1); /* Sombra sutil para destacar */
+  padding-left: 1.5rem;
+}
+
+/* Conteúdo Principal */
+.content {
+  margin-left: 250px; /* Espaço para a navbar lateral */
+  padding: 2rem;
+  width: calc(100% - 250px); /* Ajusta a largura do conteúdo para não ultrapassar */
+  max-width: 100%; /* Garante que não haja limite de largura */
+  box-sizing: border-box; /* Inclui o padding no cálculo da largura */
+  overflow-x: auto; /* Permite rolagem horizontal */
+}
+
+/* Home */
+.home {
+  text-align: center;
+}
+
+/* Cadastro de Roupas */
+.cadastro {
+  width: 100%; /* Ocupar toda a largura disponível */
+  margin: 0; /* Remover margens */
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+form label {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+form input {
+  flex: 1;
+  padding: 0.5rem;
+}
+
+form button {
+  background-color: #1C2434;
+  color: white;
+  border: none;
+  padding: 0.7rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+form button:hover {
+  background-color: #1C2434;
+}
+
+/* Tabela */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  min-width: 600px; /* Ajuste opcional para evitar que a tabela encolha muito */
+  background-color: #fff; /* Cor de fundo da tabela */
+  border-radius: 8px; /* Bordas arredondadas */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Sombra suave para a tabela */
+}
+
+table th, table td {
+  border: 1px solid #ddd;
+  padding: 0.75rem;
+  text-align: left;
+  transition: background-color 0.3s ease;
+}
+
+table th {
+  background-color: #1C2434; /* Cor de fundo escura para o cabeçalho */
+  color: white; /* Cor do texto do cabeçalho */
+  font-weight: bold;
+}
+
+table tr:nth-child(even) {
+  background-color: #f7f7f7; /* Cor alternada nas linhas */
+}
+
+table tr:hover {
+  background-color: #c7cbd4; /* Cor de fundo ao passar o mouse */
+}
+
+table td {
+  color: #333; /* Cor do texto nas células */
+}
+
+/* Estilo para os botões da tabela */
+button {
+  background-color: #e74c3c; /* Cor de fundo vermelha */
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 5px; /* Bordas arredondadas nos botões */
+  transition: background-color 0.3s ease, transform 0.2s;
+}
+
+button:hover {
+  background-color: #c0392b; /* Cor mais escura no hover */
+  transform: translateY(-2px); /* Efeito de levitação */
+}
+
+button:active {
+  transform: translateY(1px); /* Efeito de pressionar */
+}
+
+button {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: darkred;
+}

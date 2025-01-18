@@ -1,0 +1,30 @@
+curl -X GET http://localhost:8080/
+
+###
+
+curl -X GET http://localhost:8080/doacoes
+
+### 
+
+curl -X POST http://localhost:8080/doacoes \
+     -H "Content-Type: application/json" \
+     -d '{
+           "nome": "Calça",
+           "tamanho": "P",
+           "quantidade": "1"
+         }'
+
+
+### 
+
+curl -X PUT "http://localhost:8080/doacoes?id=496db023-39c5-4e71-89b4-5299e7c460dc" \
+     -H "Content-Type: application/json" \
+     -d '{
+           "nome": "Calça preta",
+           "tamanho": "P",
+           "quantidade": "1"
+         }'
+
+### 
+
+curl -X DELETE "http://localhost:8080/doacoes?id=fe42987b-c44-4edc-9155-f433591532e2"

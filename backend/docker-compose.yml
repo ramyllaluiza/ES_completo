@@ -1,0 +1,14 @@
+version: "3.3"
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080" # Mapeia a porta 8080 do container para a porta 8080 do host
+    volumes:
+      - .:/app # Mapeia o diretório atual para dentro do container
+      - /app/node_modules # Ignora alterações em node_modules
+    environment:
+      - NODE_ENV=development
