@@ -18,7 +18,7 @@ function ClothingTable({ clothes, onRemoveClothing }) {
         <td>{clothing.tamanho}</td>
         <td>{clothing.quantidade}</td>
         <td style={{ textAlign: 'center' }}>
-          <button
+          <button class="remove"
             onClick={() => {
               console.log("ID da doação para remover:", clothing.id);
               onRemoveClothing(clothing.id);

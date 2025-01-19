@@ -56,7 +56,7 @@ function AddClothingForm({ addClothing }) {
           style={styles.input}
         />
       </div>
-      <button type="submit" style={styles.button}>Adicionar</button>
+      <button  class="add" type="submit" style={styles.button}>Adicionar</button>
     </form>
   );
 }
