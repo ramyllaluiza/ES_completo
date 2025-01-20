@@ -14,9 +14,9 @@ describe('API de Doações', function () {
   // Teste para criar uma nova doação (POST /doacoes)
   it('deve criar uma nova doação', function (done) {
     const doacao = {
-      nome: 'Alimentos',
-      descricao: 'Cestas básicas para doação',
-      quantidade: 100
+      nome: 'camisa',
+      tamanho: 'P',
+      quantidade: 2
     };
 
     request(app)
@@ -49,7 +49,7 @@ describe('API de Doações', function () {
       .end((err, res) => {
         assert.strictEqual(res.status, 200);
         assert.strictEqual(res.body.doacao.id, doacaoId);
-        assert.strictEqual(res.body.doacao.nome, 'Alimentos');
+        assert.strictEqual(res.body.doacao.nome, 'camisa');
         done();
       });
   });
@@ -68,9 +68,9 @@ describe('API de Doações', function () {
   // Teste para atualizar uma doação existente (PUT /doacoes)
   it('deve atualizar uma doação existente', function (done) {
     const doacaoAtualizada = {
-      nome: 'Alimentos',
-      descricao: 'Cestas básicas atualizadas',
-      quantidade: 150
+      nome: 'camisa',
+      tamanho: 'P',
+      quantidade: 2
     };
 
     request(app)
@@ -87,8 +87,8 @@ describe('API de Doações', function () {
   // Teste para tentar atualizar uma doação com ID inexistente (PUT /doacoes)
   it('deve retornar erro 404 se a doação não for encontrada para atualização', function (done) {
     const doacaoInvalida = {
-      nome: 'Alimentos',
-      descricao: 'Cestas básicas inválidas',
+      nome: 'camisa',
+      tamanho: 'CP',
       quantidade: 200
     };
 

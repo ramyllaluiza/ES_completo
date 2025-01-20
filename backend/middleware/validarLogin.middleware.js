@@ -1,8 +1,8 @@
-const Ajv = require('ajv');
-const ajv = new Ajv();
-const addFormats = require("ajv-formats");
-const loginSchema = require('../schema/login.schema');
+import Ajv from 'ajv';
+import addFormats from 'ajv-formats';
+import loginSchema from '../schema/login.schema.js';
 
+const ajv = new Ajv();
 addFormats(ajv);
 
 function validarLogin(req, res, next) {
@@ -17,4 +17,4 @@ function validarLogin(req, res, next) {
     }
 }
 
-module.exports = validarLogin;
+export { validarLogin };

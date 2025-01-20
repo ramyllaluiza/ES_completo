@@ -4,7 +4,6 @@ const loginSchema = {
         email: {
             type: "string",
             format: "email" // Validação do formato de email
-           
         },
         senha: {
             type: "string",
@@ -15,4 +14,4 @@ const loginSchema = {
     additionalProperties: false // Bloqueia outros campos não especificados
 };
 
-module.exports = loginSchema;
+export default loginSchema;
