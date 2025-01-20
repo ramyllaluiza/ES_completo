@@ -62,7 +62,7 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js --maxWorkers=1 --watchAll=false",
+    "test":  "react-scripts test",
     "deploy": "npm run build && serve -s build"
   },
   "eslintConfig": {
