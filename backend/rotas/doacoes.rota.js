@@ -1,5 +1,5 @@
-import express from 'express';
-import { v4 as uuidv4 } from 'uuid';
+const express = require('express');
+const { v4: uuidv4 } = require('uuid');
 
 const router = express.Router();
 const doacoes = {};
@@ -47,6 +47,7 @@ const doacoes = {};
  *       404:
  *         description: Doação não encontrada
  */
+// Rotas e lógicas
 router.get('/:id', (req, res) => {
     const doacao = doacoes[req.params.id];
     if (doacao) {
@@ -55,7 +56,6 @@ router.get('/:id', (req, res) => {
         res.status(404).json({ msg: "Doação não encontrada!" });
     }
 });
-
 /**
  * @swagger
  * /doacoes/{id}:
@@ -208,4 +208,4 @@ router.get('/', (req, res) => {
 });
 
 
-export default router;
+module.exports = router; 

@@ -186,17 +186,16 @@
     "ajv-formats": "^3.0.1",
     "chai": "^5.1.2",
     "chai-http": "^5.1.1",
-    "mocha": "^7.2.0",
+    "mocha": "^11.0.1",
     "nodemon": "^3.1.7",
     "sinon": "^19.0.2",
     "supertest": "^7.0.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.7.3"
   },
-  "type": "module",
   "scripts": {
     "start": "nodemon --exec node index.js",
-    "test": "mocha --require ts-node/register"
+    "test": "mocha"
   },
   "author": "ramylla",
   "license": "ISC"
