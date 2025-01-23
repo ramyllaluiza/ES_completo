@@ -5,7 +5,7 @@ const router = express.Router();
 module.exports = router;
 
 
-// Função para gerar o token JWT
+// Função para gerar o token JWT!
 function gerarToken(usuario) {
   return jwt.sign(
     { id: usuario.id, nome: usuario.nome, email: usuario.email },
